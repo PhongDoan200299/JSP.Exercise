@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script language="JavaScript">
+    function changeText() {
+        var name = document.getElementById("name");
+        var output = document.getElementById("output");
+
+        output.innerHTML = "Xin chào: " + name.value;
+    }
+</script>
+</head>
+Nhập vào tên của bạn: 
+<!-- <input type="text" id="name" onchange="changeText()"></input> -->
+<input type="text" id="name" onkeypress="changeText()" onchange="changeText()"></input>
+<p id="output">Xin chào: </p>
+</body>
+</html>

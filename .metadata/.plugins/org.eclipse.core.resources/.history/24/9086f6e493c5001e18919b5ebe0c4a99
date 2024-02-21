@@ -1,0 +1,105 @@
+package util;
+
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+
+
+
+
+
+
+public class Email {
+	// Email: doanminhphong99@gmail.com
+	// Password: twjs wlli yycf cwkj
+	
+		static final String from = "doanminhphong99@gmail.com";
+		static final String password = "Khluvp3ngfrv1999";
+	public static boolean sendEmail(String to, String tieuDe, String noiDung) {
+
+		
+		
+		
+		// Properties: Khai báo các thuộc tính
+		Properties props = new Properties();
+		props.put("mail.smtp.host", "smtp.gmail.com"); // SMTP HOST (server gửi)
+		props.put("mail.smtp.port", "587"); // TLS 587 / SSL 465 (port gửi)
+		props.put("mail.smtp.auth", "true"); // Có phải đăng nhập
+		props.put("mail.smtp.starttls.enable", "true");
+		
+		// Create Authenticator
+		Authenticator auth = new Authenticator() {
+			// Nhập 1 username và password
+			
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				// TODO Auto-generated method stub
+				return new PasswordAuthentication(from, password);
+			}
+			
+		};
+		
+		// Phiên làm việc
+		// Thông qua props đăng nhập vào gmail với cái tài khoản này, được 1 phiên làm việc
+		Session session = Session.getInstance(props, auth);
+		
+		// Gửi email
+		//final String to = "phong200299doan@gmail.com";
+		
+		
+		//Tạo một tin nhắn mới
+		MimeMessage msg = new MimeMessage(session);
+		
+		try {
+			//Email với code HTML (kiểu nội dung)
+			msg.addHeader("Content-type", "text/HTML; charset= UTF-8");
+			
+			//Email được gửi từ đâu (Người gửi)
+			msg.setFrom(from);
+			
+			//Email gửi cho ai(Người nhận)
+			//InternetAddress.parse(to,false) kiểm tra địa chỉ có 9 xác ko
+			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to,false));
+			
+			// TIêu đề email
+			msg.setSubject("Thử nghiệm gửi email");
+			
+			// Quy định ngày gửi
+			msg.setSentDate(new Date());
+			
+			// Quy định email nhận phản hồi
+			//msg.setReplyTo(InternetAddress.parse(from,false));
+			
+			// Nội dung
+			//msg.setText("Đây là phần nội dung", "UTF-8");
+			msg.setContent(noiDung,"text/html");
+			
+			// Gửi email
+			Transport.send(msg);
+			System.out.println("Gửi email thành công");
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Gặp lỗi trong quá trình gửi email");
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public static void main(String[] args) {
+		for (int i = 0; i < 10; i++) {
+			Email.sendEmail("phong200299doan@gmail.com", System.currentTimeMillis() + "", "Đây là phần nội dung!");
+		}
+
+	}
+}

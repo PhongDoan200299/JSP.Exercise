@@ -1,0 +1,61 @@
+package util;
+
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.internet.MimeMessage;
+
+
+
+public class Email {
+	// Email: doanminhphong99@gmail.com
+	// Password: twjs wlli yycf cwkj
+	
+	public static void main(String[] args) {
+		final String from = "doanminhphong99@gmail.com";
+		final String password = "Khluvp3ngfrv1999";
+		
+		
+		
+		// Properties: Khai báo các thuộc tính
+		Properties props = new Properties();
+		props.put("mail.smtp.host", "smtp.gmail.com"); // SMTP HOST (server gửi)
+		props.put("mail.smtp.port", "587"); // TLS 587 / SSL 465 (port gửi)
+		props.put("mail.smtp.auth", "true"); // Có phải đăng nhập
+		props.put("mail.smtp.starttls.enable", "true");
+		
+		// Create Authenticator
+		Authenticator auth = new Authenticator() {
+
+			// Nhập 1 username và password
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				// TODO Auto-generated method stub
+				return new PasswordAuthentication(from, password);
+			}
+			
+		};
+		
+		// Phiên làm việc
+		// Thông qua props đăng nhập vào gmail với cái tài khoản này
+		Session session = Session.getInstance(props, auth);
+		
+		// Gửi email
+		final String to = "phong200299doan@gmail.com";
+		
+		
+		//Tạo một tin nhắn mới
+		MimeMessage msg = new MimeMessage(session);
+		
+		try {
+			msg.addHeader("Content-type", "text/HTML; charset= UTF-8");
+			msg.setFrom(from);
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale =1" charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1 {
+	color: red;
+	font-family: sans-serif;
+}
+
+.myDiv {
+	border: 5px outset red;
+	background-color: lightblue;
+	text-align: center;
+}
+</style>
+<link href="css/mystyle.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>H1 thứ nhất</h1>
+	<!-- Inline style sheet -->
+	<h1 style="color: red; font-size: 10; font-family: sans-serif;">Text</h1>
+	-- Kích thước lớn nhất
+	<h2>Text</h2>
+	<h3>Text</h3>
+	<h4>Text</h4>
+	<h5>Text</h5>
+	<h6>Text</h6>
+	-- nhỏ nhất
+
+	<div class="myDiv">
+		<p>Đoạn 1</p>
+	</div>
+
+	<p>Đây là 1 ddaonj văn bản</p>
+	<p align="left">Đây là 1 ddaonj văn bản</p>
+	<p align="center">Đây là 1 ddaonj văn bản</p>
+	<p align="right">Đây là 1 ddaonj văn bản</p>
+
+	<pre>
+	public static void main(String[] args) {
+		int a = 5;
+		int b = 6;
+		if(a &lt; b) {
+			System.out.println("a &lt; b");
+		} else {
+			System.out.println("a &gt; b");
+		}
+	}
+	</pre>
+
+	<!--  List
+		ol = order list
+		ul = under list
+	 -->
+
+	<ol type="I">
+		<li>Mục 1</li>
+		<li>Mục 2
+			<ol type="1">
+				<li>Mục 1.1<>
+				<li>Mục 1.2
+					<ol type="a">
+						<li>Phần a</li>
+						<li>Phần b</li>
+						<li>Phần c</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+	</ol>
+
+	<ul type="circle">
+		<li>Ví dụ 1</li>
+		<li>Ví dụ 2</li>
+	</ul>
+
+	<p>
+		<font color="red" size="4" face="arial"> Đoạn Văn Bản 1</font> <br>
+		<font color="Yellow" size="10" face="arial"> Đoạn Văn Bản 1</font>
+	</p>
+
+	<p>
+		Xin chào các bạn, chào mừng các bạn đến với <b>TITV.vn</b>
+	</p>
+	<p>
+		Xin chào các bạn, chào mừng các bạn đến với <strong>TITV.vn</strong>
+	</p>
+
+	<u>Gạch dưới</u>
+	<br>
+	<i>in nghiêng</i>
+	<hr>
+	123 sdf
+	<br>
+
+	<a href="https://titv.vn"> click here</a>
+
+	<img alt="" width="500px" height="500px"
+		src="https://scontent.fdad7-2.fna.fbcdn.net/v/t39.30808-6/419418502_345465288345298_2520666874821769491_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=h3pUcbEWNMEAX9OxFmw&_nc_ht=scontent.fdad7-2.fna&oh=00_AfBn-NGMU8hCi2YxGWrDPwMFqHCqLsA0epie4soWYef42A&oe=65A9B670">
+	<hr>
+	<img alt="logo1.png" src="img/maitogai.png" width="500px"
+		height="500px">
+
+	<table border="1" width="100%">
+		<thead>
+			<tr>
+				<th width="10%">STT</th>
+				<th width="70%">Họ và tên</th>
+				<th width="20%">Điểm số</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Nguyễn Văn A</td>
+				<td rowspan="2">10</td>
+			</tr>
+			<tr>
+				<td>22</td>
+				<td>Nguyễn Văn b</td>
+				<td>9</td>
+			</tr>
+			<tr>
+				<td colspan="2">3</td>
+				<td>Nguyễn Văn C</td>
+				<td>8</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

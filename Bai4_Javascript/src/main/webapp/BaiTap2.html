@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="my_div">Nội dung ban đầu</div>
+
+    <input type="button" id="changel" value="Thay đổi" />
+
+
+    <!-- <script>
+        //Cách 1
+        var changel = document.getElementById("changel");
+        changel.onclick = function () {
+            window.alert("Test");
+            var my_div = document.getElementById("my_div");
+            my_div.innerHTML = "Nội dung bị thay đổi";
+        }
+    </script> -->
+    <script>
+      // Cách 2
+      changel.onclick = function () {
+        var my_div = document.getElementById("my_div");
+        my_div.innerHTML = "Nội dung bị thay đổi";
+      };
+    </script>
+  </body>
+</html>

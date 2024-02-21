@@ -1,0 +1,14 @@
+package util;
+
+public class Email {
+	// Email: doanminhphong99@gmail.com
+	// Password: Khluvp3ngfrv1999
+	// Key: twjs wlli yycf cwkj
+	
+	public static void main(String[] args) {
+		final String from = "doanminhphong99@gmail.com";
+		final String password = "Khluvp3ngfrv1999";
+		
+		final String to = "phong200299doan@gmail.com"
+	}
+}
